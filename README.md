@@ -4,7 +4,7 @@
 
 [SFC Lekki Property API](https://documenter.getpostman.com/view/15779746/UVXhpbiF) is a HTTP REST API for a property company in which you can add properties for lease and also view properties available.
 
-Read [Software Architecture](https://drive.google.com/file/d/1QytLFKYmczPkewieC1Qs3u6shM1MQpxb/view?usp=sharing)
+Check [Software Architecture Drawing](https://drive.google.com/file/d/1QytLFKYmczPkewieC1Qs3u6shM1MQpxb/view?usp=sharing)
 
 ## Overview
 
