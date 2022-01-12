@@ -13,7 +13,7 @@ const PropertyService = () => {
     // Get property
     const getProperty = async id => {
         const property = await propertyRepository.getProperty(id)
-
+    
         if (!property) throw new Error('property does not exist')
         return property
     }
@@ -35,11 +35,15 @@ const PropertyService = () => {
     }
 
     // Get filtered properties
-    const updateProperty = async body => {
-        const property = await propertyRepository.updateProperty(body)
-    
-        if (!property) throw new Error('no filtered properties available')
-        return property
+    const updateProperty = async(body, id) => {
+        const isProperty = await getProperty(id)
+        
+        if (isProperty) {
+            const property = await propertyRepository.updateProperty(body, id)
+        
+            if (!property) throw new Error('property could not be updated')
+            return property
+        }
     }
 
     return {

@@ -39,13 +39,13 @@ const propertyIdSchema = {
 
 const updatePropertySchema = {
     schema: Joi.object().keys({
-        bedroom: Joi.number().required(),
-        sittingRoom: Joi.number().required(),
-        kitchen: Joi.number().required(),
-        bathroom: Joi.number().required(),
-        toilet: Joi.number().required(),
-        description: Joi.string().required(),
-		validTo: Joi.date().raw().min(Joi.ref('validFrom')).required()
+        bedroom: Joi.number(),
+        sittingRoom: Joi.number(),
+        kitchen: Joi.number(),
+        bathroom: Joi.number(),
+        toilet: Joi.number(),
+        description: Joi.string(),
+		validTo: Joi.date().raw()
 	}),
 	message: 'Input error while updating property'
 }

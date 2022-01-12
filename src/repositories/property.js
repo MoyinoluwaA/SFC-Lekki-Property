@@ -23,8 +23,7 @@ const PropertyRepository = () => {
     }
 
     const updateProperty = async (requestBody, id) => {
-        const property = await Property.updateOne({ id }, { ...requestBody } )
-        console.log(property);
+        const property = await Property.findOneAndUpdate({ id }, { ...requestBody }, { new: true } )
         return property
     }
 

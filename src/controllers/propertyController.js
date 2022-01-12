@@ -64,7 +64,7 @@ const PropertyController = (serviceContainer, successResponse, errorResponse) =>
 		try {
 			const { body, params: { id } } = req
 
-			const property = await serviceContainer.propertyService.updateProperty(body)
+			const property = await serviceContainer.propertyService.updateProperty(body, id)
             successResponse(res, `Property with id: ${id} updated successfully`, property)
 		} catch (error) {
 			errorResponse(res, error.message, 404)
