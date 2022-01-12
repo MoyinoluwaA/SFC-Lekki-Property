@@ -1,4 +1,4 @@
-# [SFC Lekki Property API](https://documenter.getpostman.com/view/15779746/UVXhovuB)
+# SFC Lekki Property API
 
 ## Introduction
 
@@ -14,7 +14,7 @@
 - Get filtered list of properties
 - Upload image of property
 
-## [Documentation](https://documenter.getpostman.com/view/15779746/UVXhovuB)
+## Documentation
 
 [Read more in the documentation.](https://documenter.getpostman.com/view/15779746/UVXhovuB)
 
