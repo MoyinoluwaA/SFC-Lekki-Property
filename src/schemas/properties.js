@@ -32,7 +32,7 @@ const getPropertiesQuerySchema = {
 
 const propertyIdSchema = {
     schema: Joi.object().keys({
-        id: Joi.string()
+        id: Joi.string().alphanum().length(24)
     }),
     message: 'Invalid id passed as parameter'
 }

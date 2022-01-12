@@ -1,3 +1,5 @@
+const { errorResponse } = require("../utils/response")
+
 /**
    * @description Used to validate req body, params, query and headers to
    *  ensure the required fields are filled and are of the right data type
@@ -23,6 +25,7 @@
 
 		const { message } = isValid.error.details[0]
 
+		errorResponse(res, )
 		res.status(400).json({
 			code: 400,
 			status: 'Bad request',

@@ -12,7 +12,7 @@ const PropertyController = (serviceContainer, successResponse, errorResponse) =>
             successResponse(res, 'Property added successfully', property, 201)
 	
 		} catch (error) {
-            console.log(error);
+            errorResponse(res, error.message, 404)
 		}
 	}
 

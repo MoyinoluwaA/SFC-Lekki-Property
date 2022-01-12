@@ -1,8 +1,7 @@
-const { cloudinaryConfig, uploader } = require('../config/cloudinary')
+const cloudinary = require('../config/cloudinary')
 
-cloudinaryConfig()
-const uploadService = async(data, file) => {
-    return await uploader.upload(data.content, {
+const uploadService = async(file) => {
+    return await cloudinary.uploader.upload(file.path, {
         folder: 'sfc/properties',
         use_filename: true,
         filename_override: file.originalname,

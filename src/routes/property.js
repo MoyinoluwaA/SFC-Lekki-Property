@@ -36,6 +36,7 @@ router.get(
 
 router.patch(
     '/:id',
+    validateInput(propertyIdSchema, 'params'),
     validateInput(updatePropertySchema, 'body'),
     (req, res) => {
         PropertyControllerHandler.updateProperty(req, res)

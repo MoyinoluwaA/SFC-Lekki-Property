@@ -34,7 +34,7 @@ const PropertyService = () => {
         return properties
     }
 
-    // Get filtered properties
+    // Update property
     const updateProperty = async(body, id) => {
         const isProperty = await getProperty(id)
         
