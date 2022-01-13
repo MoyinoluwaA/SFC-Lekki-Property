@@ -1,23 +1,11 @@
-const UploadController = (serviceContainer, successResponse, errorResponse) => {
+const UploadController = (successResponse, errorResponse) => {
     
-    const imageUpload = async (req, res, next) => {
+    const imageUpload = async (req, res) => {
         try {
             const { file } = req
-            console.log(file);
-            
-            // const {
-            //     public_id, format, original_filename, url, secure_url,
-            // } = await serviceContainer.uploadService(data, file)
-    
-            // successResponse(
-            //     res,
-            //     'File uploaded successfully',
-            //     {
-            //         public_id, format, original_filename, url, secure_url,
-            //     }
-            // )
+            successResponse(res, 'image uploaded successfully', file )
         } catch (error) {
-            console.log(error);
+            errorResponse(res, error.message)
         }
     }
     
