@@ -28,16 +28,13 @@ module.exports = (req, res, next) => {
 	try {
 		upload(req, res, (err) => {
 			if (err) {
-				// instanceof multer.MulterError
-				if (err.code === 'LIMIT_FILE_SIZE') {
-					err = 'File size is too large. allowed file size is 500KB'
-				}
+
 				return errorResponse(
 					[{
 						reason: "bad request",
-						message: err
+						message: err.message
 					}], 
-					res, err, 400
+					res, "Form data key should be file", 400
 				)
 			}
 			if (!req.file) {

@@ -44,6 +44,7 @@ const errorResponse = (errors, res, message, status = 500) => {
     } else {
         errMessage = message
     }
+
     return res.status(status).send({ error: { 
         errors, 
         code: status, 
