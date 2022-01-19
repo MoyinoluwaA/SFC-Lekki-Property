@@ -22,7 +22,12 @@ app.use('/api/v1/lekki/property', PropertyRouter)
 app.use('/api/v1/lekki/upload', UploadRouter)
 
 app.use((req, res) => {
-	errorResponse(res, null, 404)
+	errorResponse([
+        {
+            reason: 'notFound',
+            message: 'Page not found'
+        }
+    ], res, null, 404)
 })
 
 app.use((err, req, res, next) => {
