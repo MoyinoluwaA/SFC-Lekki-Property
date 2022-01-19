@@ -1,11 +1,16 @@
 const UploadController = (successResponse, errorResponse) => {
     
-    const imageUpload = async (req, res) => {
+    /** @desc Upload property image
+     * @param {object} req - The request object 
+     * @param {object} res - The response object 
+	 * @route  POST /api/v1/lekki/upload
+    */
+    const imageUpload = async (req, res, next) => {
         try {
             const { file } = req
             successResponse(res, 'image uploaded successfully', file )
         } catch (error) {
-            errorResponse(res, error.message)
+            next(error)
         }
     }
     

@@ -9,8 +9,8 @@ const router = express.Router()
 router.post(
     '/', 
     upload,
-    (req, res) => {
-        UploadControllerHandler.imageUpload(req, res)
+    (req, res, next) => {
+        UploadControllerHandler.imageUpload(req, res, next)
     }
 )
 

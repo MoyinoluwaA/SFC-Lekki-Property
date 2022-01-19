@@ -25,14 +25,14 @@ const { errorResponse } = require("../utils/response")
 
 		const { message } = isValid.error.details[0]
 
-		errorResponse(res, )
-		res.status(400).json({
-			code: 400,
-			status: 'Bad request',
-			// eslint-disable-next-line no-useless-escape
-			message: message.replace(/[\"]/gi, ''),
-			errors: data.message,
-		})
+		errorResponse(
+			[{
+				reason: 'required',
+				message: message.replace(/[\"]/gi, ''),
+				locationType: type,
+			}], 
+			res, message.replace(/[\"]/gi, ''), 400
+		)
 	} catch (err) {
 		next(err)
 	}

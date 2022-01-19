@@ -13,7 +13,7 @@ app.use(cors({ origin: '*' }))
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 
-// app.use(logger)
+app.use(logger)
 app.get('/', (req, res) => {
 	successResponse(res, 'Welcome to PROPERTY API', [], 200)
 })
@@ -26,12 +26,13 @@ app.use((req, res) => {
 })
 
 app.use((err, req, res, next) => {
-	res.status(500).json({
-		code: 500,
-		status: 'failed',
-		message: 'Internal Server Error',
-		error: err.message,
-	})
+    errorResponse(
+        [{
+            reason: 'Internal Server Error',
+            message: err.message
+        }], 
+        res, err.message, 500
+    )
 })
 
 const bootstrap = async () => {

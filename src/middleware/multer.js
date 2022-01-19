@@ -30,12 +30,24 @@ module.exports = (req, res, next) => {
 			if (err) {
 				// instanceof multer.MulterError
 				if (err.code === 'LIMIT_FILE_SIZE') {
-					err = 'file size is too large. allowed file size is 500KB'
+					err = 'File size is too large. allowed file size is 500KB'
 				}
-				return errorResponse(res, err, 400)
+				return errorResponse(
+					[{
+						reason: "bad request",
+						message: err
+					}], 
+					res, err, 400
+				)
 			}
 			if (!req.file) {
-				return errorResponse(res, 'No File Selected', 400)
+				return  errorResponse(
+					[{
+						reason: "required",
+						message: "No File Selected"
+					}], 
+					res, "No File Selected", 400
+				)
 			}
 			
 			next()

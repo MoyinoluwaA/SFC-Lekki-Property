@@ -21,7 +21,7 @@
  * @param {Number} [status=500] http error status
  * @returns {Response} http response with error status and message
  */
-const errorResponse = (res, message, status = 500) => {
+const errorResponse = (errors, res, message, status = 500) => {
     let errMessage
     if (message == null) {
         switch (status) {
@@ -44,7 +44,11 @@ const errorResponse = (res, message, status = 500) => {
     } else {
         errMessage = message
     }
-    return res.status(status).send({ status: 'failed', code: status, message: errMessage })
+    return res.status(status).send({ error: { 
+        errors, 
+        code: status, 
+        message: errMessage.replace(/[\"]/gi, '')
+    }})
 }
 
 module.exports = {

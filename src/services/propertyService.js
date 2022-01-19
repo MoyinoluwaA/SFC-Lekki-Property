@@ -13,7 +13,7 @@ const PropertyService = () => {
     // Get property
     const getProperty = async id => {
         const property = await propertyRepository.getProperty(id)
-    
+
         if (!property) throw new Error('property does not exist')
         return property
     }
