@@ -18,6 +18,7 @@ Check [Software Architecture Drawing](https://drive.google.com/file/d/1QytLFKYmc
 
 ## Documentation
 [API Specification Document](https://docs.google.com/document/d/1o2SQ9Ka763PBDB5R3xZe0q_N_EPE9-77E3drzqRrn1U/edit?usp=sharing)
+
 [Read more in the documentation.](https://documenter.getpostman.com/view/15779746/UVXhpbiF)
 
 ## Set Up Development
